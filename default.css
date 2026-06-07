@@ -4,7 +4,7 @@ body {
   margin: 60px auto;
   padding: 0 20px;
   color: #ffffcc;
-  background: #1c3378;
+  background: #142352;
   text-align: center;
 }
 
@@ -16,7 +16,19 @@ h1 {
 a {
   display: block;
   margin-bottom: 24px;
-  color: #0055cc;
+  color: #2d50b9;
+}
+
+a:visited {
+  color: #1e357b;
+}
+
+a:hover {
+  color: #5b7ad7;
+}
+
+a:active {
+  color: #b3b300;
 }
 
 .intro {

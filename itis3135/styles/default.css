@@ -1,0 +1,35 @@
+body {
+  font-family: Courier, monospace;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: #ffffcc;
+  background: #003300;
+  display: block;
+  text-align: center;
+  max-width: fit-content;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+a {
+  margin-bottom: 24px;
+  color: #0055cc;
+}
+
+.assignments {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px 28px;
+  line-height: 1.7;
+  background: #ffffcc;
+  color: black;
+}
