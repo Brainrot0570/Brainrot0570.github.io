@@ -1,0 +1,29 @@
+body {
+  font-family: Georgia, serif;
+  max-width: 680px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: #ffffcc;
+  background: #1c3378;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+a {
+  display: block;
+  margin-bottom: 24px;
+  color: #0055cc;
+}
+
+.intro {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px 28px;
+  line-height: 1.7;
+  background: #ffffcc;
+  color: black;
+}
