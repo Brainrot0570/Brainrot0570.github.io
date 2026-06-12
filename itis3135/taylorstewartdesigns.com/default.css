@@ -1,0 +1,85 @@
+  :root {
+    --primary: #16160E;
+    --accent: #A4C2A5;
+    --secondary: #3B452E;
+    --light: #D8DAD3;
+    --muted: #C0C1BE;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    background-color: var(--light);
+    color: var(--primary);
+  }
+
+  header {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--accent);
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    color: var(--accent);
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .info-block, .services-block, .contact-block {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-left: 4px solid var(--secondary);
+    border-right: 4px solid var(--secondary);
+    background-color: #ffffff;
+  }
+
+  .info-block p {
+    line-height: 1.6;
+    margin: 0;
+    color: var(--primary);
+  }
+
+  .services-block h2, .info-block h2 {
+    margin-top: 0;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--muted);
+    padding-bottom: 8px;
+  }
+
+  .services-block ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--primary);
+  }
+
+  .services-block li {
+    margin-bottom: 8px;
+  }
+
+  .contact-block {
+    background-color: var(--secondary);
+    color: var(--light);
+    border-left: 4px solid var(--accent);
+    text-align: center;
+    font-family: 'Courier New', monospace;
+  }
+
+  .contact-block h2 {
+    margin-top: 0;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .contact-block p {
+    margin: 5px;
+  }
