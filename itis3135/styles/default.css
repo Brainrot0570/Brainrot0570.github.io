@@ -47,6 +47,14 @@ a:active{
   max-width: 1050px;
 }
 
+.offwhiteblock a {
+  color:#021702
+}
+
+.offwhiteblock a:visited {
+  color:#16e916
+}
+
 
 .offwhiteleft {
   border: 1px solid #ddd;
@@ -57,6 +65,14 @@ a:active{
   color: black;
   text-align: left;
   max-width: 1050px;
+}
+
+.offwhiteleft a {
+  color:#021702
+}
+
+.offwhiteleft a:visited {
+  color:#16e916
 }
 
 figcaption {
