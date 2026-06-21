@@ -1,5 +1,5 @@
 body {
-  font-family: Georgia, serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   max-width: 680px;
   margin: 60px auto;
   padding: 0 20px;
@@ -48,7 +48,6 @@ main {
   line-height: 1.7;
   background: #ffffcc;
   color: black;
-  vertical-align:middle;
 }
 
 hr {
