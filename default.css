@@ -38,4 +38,19 @@ a:active {
   line-height: 1.7;
   background: #ffffcc;
   color: black;
+  margin-bottom: 20px;
+}
+
+main {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px 28px;
+  line-height: 1.7;
+  background: #ffffcc;
+  color: black;
+  vertical-align:middle;
+}
+
+hr {
+  border-color: #ffffcc;
 }
