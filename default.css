@@ -16,15 +16,15 @@ h1 {
 a {
   display: block;
   margin-bottom: 24px;
-  color: #2d50b9;
+  color: #1a2e69;
 }
 
 a:visited {
-  color: #1e357b;
+  color: #0c193e;
 }
 
 a:hover {
-  color: #5b7ad7;
+  color: #0b6375;
 }
 
 a:active {
