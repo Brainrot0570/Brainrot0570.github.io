@@ -1,18 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
         <head>
-        <style>
-            @font-face {
-                font-family: ocra;
-                src: url(./ocra.ttf);
-            }
-        </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, inital-scale=1.0">
         <title>Taylor Stewart's Tough Serval || ITIS3135 || Hobby</title>
-        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="icon" type="image/x-icon" href="./components/favicon.ico">
+        <style>
+            :root {
+                --primary: #160F29;
+                --accent: #246A73;
+                --secondary: #368F8B;
+                --bright: #3182ce;
+                --white: #f7e8d2;
+                --light: #F3DFC1;
+                --muted: #DDBEA8;
+            }
+
+            body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--light); 
+            color: var(--primary); 
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            }
+
+            header {
+                background-color: var(--accent);
+                color: var(--light);
+                padding: 25px 15px;
+                text-align: center;
+                border-bottom: 4px solid var(--bright);
+            }
+
+            h1 {
+                font-size: 22pt;
+                color: var(--white);
+            }
+
+            nav a {
+                color: var(--light); 
+                text-decoration: none;
+                font-weight: bold;
+                padding: 6px 12px;
+                transition: background-color 0.2s, color 0.2s;
+                border-radius: 4px;
+            }
+
+            nav a:hover, nav a:focus {
+                color: var(--light);
+                background-color: var(--secondary);
+            }
+
+            .divider {
+                color: var(--bright);
+                padding: 0 4px;
+                user-select: none;
+            }
+
+            main {
+                max-width: 800px;
+                margin: 30px auto;
+                background-color: var(--white);
+                padding: 30px;
+                border: 2px solid var(--muted);
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            }
+
+            section {
+                display: none;
+            }
+
+            .active {
+                display: block;
+            }
+            
+
+            h2 {
+                color: var(--accent);
+                border-bottom: 2px solid var(--light);
+                padding-bottom: 8px;
+                margin-top: 0;
+                font-size: 16pt;
+            }
+
+            p {
+                margin: 0 0 15px 0;
+            }
+
+            figure {
+                margin: 20px auto;
+                background-color: var(--light);
+                border: 1px solid var(--muted);
+                border-radius: 6px;
+                max-width: 100%;
+                width: 400px;
+            }
+
+            figure img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            figcaption {
+                margin-top: 8px;
+                font-size: 10pt;
+                color: var(--primary);
+                font-style: italic;
+            }
+
+            ul, ol {
+                margin: 0 0 15px 0;
+                padding-left: 20px;
+            }
+
+            form {
+                background-color: #f7fafc;
+                padding: 15px;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                margin: 15px 0;
+            }
+
+            .form-group {
+                margin-bottom: 12px;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            button {
+                background-color: #3182ce;
+                color: #ffffff;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            button:hover {
+                background-color: #2b6cb0;
+            }
+
+            blockquote {
+                margin: 15px 0;
+                padding: 10px 20px;
+                border-left: 4px solid #3182ce;
+                background-color: #f7fafc;
+                font-style: italic;
+                color: #4a5568;
+            }
+
+            footer {
+                background-color: #1a365d;
+                color: #ffffff;
+                text-align: center;
+                padding: 25px 15px;
+                margin-top: 40px;
+                border-top: 4px solid #3182ce;
+            }
+
+            .validation-buttons {
+                margin-top: 15px;
+            }
+
+            .val-btn {
+                display: inline-block;
+                background-color: #4a5568;
+                color: #ffffff;
+                padding: 8px 14px;
+                margin: 5px;
+                text-decoration: none;
+                border-radius: 4px;
+                font-size: 10pt;
+                transition: background-color 0.2s;
+            }
+
+            .val-btn:hover {
+                background-color: #718096;
+            }
+
+            .slideshow-container {
+                position: relative;
+                max-width: 420px;
+                margin: 20px auto;
+                text-align: center;
+            }
+
+            .slide {
+                display: none;
+            }
+
+            .slideshow-container figure {
+                margin: 0 auto;
+            }
+
+            .slideshow-controls {
+                margin-top: 10px;
+            }
+
+            .slide-btn {
+                background-color: var(--accent);
+                color: var(--light);
+                border: none;
+                padding: 8px 16px;
+                margin: 0 5px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 10pt;
+                transition: background-color 0.2s;
+            }
+
+            .slide-btn:hover {
+                background-color: var(--secondary);
+            }
+
+            .fade {
+                animation: fadeEffect 0.5s;
+            }
+
+            @keyframes fadeEffect {
+                from { opacity: 0.4; } 
+                to { opacity: 1; }
+            }
+
+
+        </style>
         <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     </head>
-    
+    <body>
+        <header>
+            <h1>Airplanes and Flight Simulators</h1>
+            <nav>
+                <a href="#what" class="active-link">Home</a>
+                <span class="divider">🛦</span>
+                <a href="#who">Who</a>
+                <span class="divider">🛦</span>
+                <a href="#when">When</a>
+                <span class="divider">🛦</span>
+                <a href="#where">Where</a>
+                <span class="divider">🛦</span>
+                <a href="#how">How</a>
+                <span class="divider">🛦</span>
+                <a href="#why">Why</a>
+                <span class="divider">🛦</span>
+                <a href="#ai">AI</a>
+            </nav>
+        </header>
+        <main>
+            <section id="what" class="active">
+                <h2>Home</h2>
+                <p>
+                    Flying airplanes and flight simulators is a challenging hobby that requires a lot of concentration and precision. I enjoy hobbies that help me to improve myself and learn skills that I can apply in other areas of life. 
+                </p>
+            </section>
+            <section id="who">
+                <h2>About Me</h2>
+                <p>
+                    My name is Taylor Stewart, and I have been interested in flying airplanes and flight simulators since I was 14 years old. I first flew a plane at 15 years old, before I had my drivers' license. 
+                </p>
+                <figure>
+                    <img src="images/selfie2.jpg" alt="Selfie-style photo of Taylor Stewart and his flight instructor together in an airplane.">
+                    <figcaption>
+                        This is a selfie of me and my flight instructor when I was 16 years old. 
+                    </figcaption>
+                </figure>
+            </section>
+            <section id="when">
+                <h2>Times and Seasons</h2>
+                <p>
+                    when
+                </p>
+            </section>
+            <section id="where">
+                <h2>Places</h2>
+                <p>
+                    where
+                </p>
+            </section>
+            <section id="how">
+                <h2>What equipment do you need?</h2>
+                <p>
+                    Airplanes and flight lessons are pretty expensive, but a flight simulator is a little more beginner friendly. Through the use of a simulator, you can practice flying from the comfort of your own home. If you aren't sure flying is for you, you can start off with a cheap joystick or game controller, or even a mouse and keyboard. However, more advanced equipment allows for a more realistic simulation. 
+                </p>
+                <figure>
+                    <img src="images/mySim.jpg" alt="A flight simulator setup in a home office.">
+                    <figcaption>
+                        This is my flight simulator setup. I use a Honeycomb yolk and control quadrant, and Thrustmaster pedals. I use X-Plane flight simulator. 
+                    </figcaption>
+                </figure>
+                <p>
+                    Even on the most basic aircraft, controls are complex. The slideshow below includes more detailed images of each piece of equipment in my simulator setup. 
+                </p>
+                <div class="slideshow-container">
+                    <div class="slide fade">
+                        <figure>
+                            <img src="images/yoke.jpg" alt="Honeycomb flight yoke">
+                            <figcaption>The yolk is used to control the forward and backward pitch of the airplane, as well as banking turns with the wings of the airplane.</figcaption>
+                        </figure>
+                    </div>
 
+                    <div class="slide fade">
+                        <figure>
+                            <img src="images/quad.jpg" alt="Honeycomb flight control quadrant">
+                            <figcaption>Controls such as trim, flaps, fuel mixture, and power are typically located in between the pilot and co-pilot seats.</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="slide fade">
+                        <figure>
+                            <img src="images/pedals.jpg" alt="Thrustmaster flight rudder pedals">
+                            <figcaption>Rudder pedals control the rudder at the rear of the plane. This allows pilots to correct for strong winds, or make different types of turns. </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="slideshow-controls">
+                        <button type="button" class="slide-btn" onclick="moveSlide(-1)">&#10094; Previous</button>
+                        <button type="button" class="slide-btn" onclick="moveSlide(1)">Next &#10095;</button>
+                    </div>
+                </div>
+                <p>
+                    
+                </p>
+            </section>
+            <section id="why">
+                <h2>Why</h2>
+                <p>
+                    Flying offers a unique experience. There is nothing that quite compares to the freedom of flight. 
+                </p>
+                <figure>
+                    <img src="images/cessna.jpg" alt="Cessna Skyhawk in flight">
+                    <figcaption>This picture shows a Cessna Skyhawk, the type of plane most students begin flying when they are first studying to become a licensed pilot. </figcaption>
+                </figure>
+            </section>
+            <section id="ai">
+                <h2>Use of AI</h2>
+                <p>
+                    I 
+                </p>
+            </section>
+
+        </main>
+        <footer>
+            <p>
+                <a href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+                <a href="https://wave.webaim.org/">Check Accessibility</a>
+            </p>
+            <p>
+                Site Designed by <a href = "../taylorstewartdesigns.com">Taylor Stewart Designs&copy; 2026</a>
+            </p>
+        </footer>
+        <script>
+            var navLinks = document.querySelectorAll('nav a');
+
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    var targetId = link.getAttribute('href'); 
+                    
+                    var targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        document.querySelectorAll('main section').forEach(function(sec) {
+                            sec.classList.remove('active');
+                        });
+                        
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+
+            var slideIndex = 0;
+            initSlideshow();
+
+            function initSlideshow() {
+                var slides = document.querySelectorAll('.slide');
+                if (slides.length > 0) {
+                    slides[0].style.display = 'block'; // Show first slide
+                }
+            }
+
+            function moveSlide(step) {
+                var slides = document.querySelectorAll('.slide');
+                if (slides.length === 0) return;
+
+                slides[slideIndex].style.display = 'none';
+
+                slideIndex += step;
+
+                if (slideIndex >= slides.length) {
+                    slideIndex = 0;
+                }
+                if (slideIndex < 0) {
+                    slideIndex = slides.length - 1;
+                }
+
+                slides[slideIndex].style.display = 'block';
+            }
+        </script>
+    </body>
 </html>

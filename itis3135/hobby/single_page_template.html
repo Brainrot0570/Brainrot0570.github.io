@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page App Template</title>
+    <style>
+        /* ==========================================================================
+           CRAP PRINCIPLES & GENERAL STYLING
+           ========================================================================== */
+        
+        /* 1. CONTRAST: High text-to-background readability using slate gray and soft light blue.
+           2. REPETITION: Consistent typography, alignment rules, margins, and component styling.
+           3. ALIGNMENT: Centered content layout container with structured left-aligned texts.
+           4. PROXIMITY: Related elements grouped close together with clear margins separating ideas. */
+
+        body {
+            /* No Times New Roman - modern clean font family stack used instead */
+            font-family: 'Segoe UI', Arial, sans-serif;
+            /* No plain white background - soft off-white/light-blue background tone */
+            background-color: #f0f4f8; 
+            /* No plain black text - deep legible charcoal gray for body text */
+            color: #2d3748; 
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1a365d;
+            color: #ffffff;
+            padding: 25px 15px;
+            text-align: center;
+            border-bottom: 4px solid #3182ce;
+        }
+
+        header h1 {
+            margin: 0 0 15px 0;
+            font-size: 22pt;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        /* No generic blue underlined links - customized contrast colors and transition effects */
+        nav a {
+            color: #ebf8ff; 
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 12px;
+            transition: background-color 0.2s, color 0.2s;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a:focus {
+            color: #ffffff;
+            background-color: #2b6cb0;
+        }
+
+        /* Unique divider character styled and hidden from screen readers to ensure full accessibility */
+        .divider {
+            color: #63b3ed;
+            padding: 0 4px;
+            user-select: none;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ==========================================================================
+           SINGLE PAGE APPLICATION VIEW LOGIC
+           ========================================================================== */
+        section {
+            display: none; /* Hide sections by default */
+        }
+
+        section.active {
+            display: block; /* Show only the section marked active */
+        }
+
+        /* ==========================================================================
+           ELEMENT TYPOGRAPHY & LAYOUT UTILITIES
+           ========================================================================== */
+        h2 {
+            color: #2b6cb0;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 16pt;
+        }
+
+        p {
+            margin: 0 0 15px 0;
+        }
+
+        /* Figure settings with aspect ratio constraints preventing overflow/slow layout shifts */
+        figure {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            max-width: 100%;
+            width: 400px;
+        }
+
+        figure img {
+            width: 100%;
+            height: auto; /* Maintains original aspect ratio seamlessly */
+            display: block;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-size: 10pt;
+            color: #718096;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #cbd5e0;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+        }
+
+        ul, ol {
+            margin: 0 0 15px 0;
+            padding-left: 20px;
+        }
+
+        form {
+            background-color: #f7fafc;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3182ce;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #2b6cb0;
+        }
+
+        blockquote {
+            margin: 15px 0;
+            padding: 10px 20px;
+            border-left: 4px solid #3182ce;
+            background-color: #f7fafc;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        footer {
+            background-color: #1a365d;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+            border-top: 4px solid #3182ce;
+        }
+
+        .validation-buttons {
+            margin-top: 15px;
+        }
+
+        .val-btn {
+            display: inline-block;
+            background-color: #4a5568;
+            color: #ffffff;
+            padding: 8px 14px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 10pt;
+            transition: background-color 0.2s;
+        }
+
+        .val-btn:hover {
+            background-color: #718096;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Website Main Heading Placeholder</h1>
+        <nav>
+            <!-- Navigation links trigger CSS changes via simple beginner-friendly JavaScript functions -->
+            <a href="#" onclick="showPage('what'); return false;">What</a>
+            <span class="divider" aria-hidden="true">✦</span>
+            <a href="#" onclick="showPage('who'); return false;">Who</a>
+            <span class="divider" aria-hidden="true">✦</span>
+            <a href="#" onclick="showPage('when'); return false;">When</a>
+            <span class="divider" aria-hidden="true">✦</span>
+            <a href="#" onclick="showPage('where'); return false;">Where</a>
+            <span class="divider" aria-hidden="true">✦</span>
+            <a href="#" onclick="showPage('how'); return false;">How</a>
+            <span class="divider" aria-hidden="true">✦</span>
+            <a href="#" onclick="showPage('why'); return false;">Why</a>
+            <span class="divider" aria-hidden="true">✦</span>
+            <a href="#" onclick="showPage('ai-prompts'); return false;">AI Prompts</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==========================================================================
+             WHAT SECTION (Home Page - Loads first by default)
+             ========================================================================== -->
+        <section id="what" class="active">
+            <h2>What (Home Page)</h2>
+            <p>Item 1: Description goes here. This section is visible by default when the application first loads.</p>
+            <p>Item 2: Secondary introductory description placeholder text goes here.</p>
+            <ul>
+                <li>Item 3: Bulleted highlight feature list placeholder entry</li>
+                <li>Bulleted highlight feature list placeholder entry</li>
+                <li>Bulleted highlight feature list placeholder entry</li>
+            </ul>
+            <figure>
+                <!-- Lightweight, accessible, valid vector SVG images used to maintain safe loading times and aspect ratios -->
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23cbd5e0'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%234a5568'>Image Placeholder</text></svg>" alt="Placeholder graphic illustrating home page contents">
+                <figcaption>Figure 1: Caption describing the home section graphic asset goes here.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ==========================================================================
+             WHO SECTION
+             ========================================================================== -->
+        <section id="who">
+            <h2>Who We Are</h2>
+            <p>Item 1: Background details or individual/organizational history text description goes here.</p>
+            <p>Item 2: Core mission parameters or group focus details description goes here.</p>
+            <ol>
+                <li>Item 3: Ordered sequence or structural profile placeholder</li>
+                <li>Ordered sequence or structural profile placeholder</li>
+                <li>Ordered sequence or structural profile placeholder</li>
+            </ol>
+            <figure>
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23cbd5e0'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%234a5568'>Image Placeholder</text></svg>" alt="Placeholder graphic illustrating team profile details">
+                <figcaption>Figure 2: Caption describing the introductory identity illustration goes here.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ==========================================================================
+             WHEN SECTION
+             ========================================================================== -->
+        <section id="when">
+            <h2>When (Seasons &amp; Schedule)</h2>
+            <p>Item 1: Overview and contextual framework regarding optimal timelines, hours, or calendar availability details go here.</p>
+            <table>
+                <caption>Item 2: Accessibility and Schedule Reference Index</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Time Interval Column</th>
+                        <th scope="col">Status Index Column</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Schedule structural placeholder data point</td>
+                        <td>Availability validation mapping</td>
+                    </tr>
+                    <tr>
+                        <td>Schedule structural placeholder data point</td>
+                        <td>Availability validation mapping</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Item 3: Additional text notes summarizing critical calendar thresholds go here.</p>
+            <figure>
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23cbd5e0'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%234a5568'>Image Placeholder</text></svg>" alt="Placeholder chart demonstrating seasonal timeline tracking">
+                <figcaption>Figure 3: Caption describing calendar allocation chart metrics goes here.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ==========================================================================
+             WHERE SECTION
+             ========================================================================== -->
+        <section id="where">
+            <h2>Where (Best Locations)</h2>
+            <p>Item 1: Description summarizing relevant regional positions, operational destinations, or target spatial areas goes here.</p>
+            <ul>
+                <li>Item 2: Geographical center variant placeholder A</li>
+                <li>Geographical center variant placeholder B</li>
+                <li>Geographical center variant placeholder C</li>
+            </ul>
+            <p>Item 3: Navigation advice or alternative transit coordinates description placeholder goes here.</p>
+            <figure>
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23cbd5e0'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%234a5568'>Image Placeholder</text></svg>" alt="Placeholder map illustration detailing location regions">
+                <figcaption>Figure 4: Caption describing destination location layout diagrams goes here.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ==========================================================================
+             HOW SECTION
+             ========================================================================== -->
+        <section id="how">
+            <h2>How It Operates</h2>
+            <p>Item 1: Explanatory background regarding systematic deployment steps or mechanical processes description goes here.</p>
+            <form action="#" method="get" onsubmit="alert('Form feedback placeholder execution sequence triggered.'); return false;">
+                <!-- Item 2: User Input Data Form Structure -->
+                <div class="form-group">
+                    <label for="sampleTextInput">Placeholder Data Label Field:</label>
+                    <input type="text" id="sampleTextInput" name="sampleTextInput" placeholder="Text input structural placeholder...">
+                </div>
+                <button type="submit">Action Submission Button</button>
+            </form>
+            <p>Item 3: Concluding procedural recommendations or processing checklist instructions description goes here.</p>
+            <figure>
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23cbd5e0'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%234a5568'>Image Placeholder</text></svg>" alt="Placeholder schematic tracking standard operating methodology steps">
+                <figcaption>Figure 5: Caption mapping standard procedural tracking workflows goes here.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ==========================================================================
+             WHY SECTION
+             ========================================================================== -->
+        <section id="why">
+            <h2>Why Choose This Model</h2>
+            <p>Item 1: Strategic analytical defense paragraph or justification data text explanation description goes here.</p>
+            <blockquote>
+                "Item 2: Authoritative third-party assessment or structural recommendation quote placeholder text goes here."
+            </blockquote>
+            <p>Item 3: Contextual efficiency outcomes summary description goes here.</p>
+            <figure>
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23cbd5e0'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%234a5568'>Image Placeholder</text></svg>" alt="Placeholder graphical summary matrix analyzing performance advantages">
+                <figcaption>Figure 6: Caption defining core logic justification variables goes here.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ==========================================================================
+             AI PROMPTS SECTION
+             ========================================================================== -->
+        <section id="ai-prompts">
+            <h2>AI Generation Prompts Used</h2>
+            <p>Item 1: Record log tracking systematic engineering configurations and interactive workflows utilized to create this document.</p>
+            <ul>
+                <li>Item 2: Generation prompt criteria parameters and system instructions baseline placeholder 1</li>
+                <li>Generation prompt criteria parameters and system instructions baseline placeholder 2</li>
+                <li>Generation prompt criteria parameters and system instructions baseline placeholder 3</li>
+            </ul>
+            <p>Item 3: Syntactical and structural refinement choices analysis text goes here.</p>
+            <figure>
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23cbd5e0'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%234a5568'>Image Placeholder</text></svg>" alt="Placeholder engineering structural diagram summarizing design flows">
+                <figcaption>Figure 7: Caption detailing programmatic optimization flows goes here.</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Single Page App Template. Formatted under standard responsive structures.</p>
+        <div class="validation-buttons">
+            <!-- Access evaluation utilities styled to respect clear contrast rules -->
+            <a class="val-btn" href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
+            <a class="val-btn" href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+            <a class="val-btn" href="https://wave.webaim.org/">WAVE Accessibility Check</a>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * Simple beginner-friendly function to display the chosen section 
+         * and clear all other page instances.
+         * @param {string} pageId - The ID attribute matching the targeted view section.
+         */
+        function showPage(pageId) {
+            // Retrieve an array list of all section tags nested inside the main container
+            var targetSections = document.querySelectorAll('main section');
+            
+            // Step through all sections and strip active class rules to hide them
+            for (var index = 0; index < targetSections.length; index++) {
+                targetSections[index].classList.remove('active');
+            }
+            
+            // Append the active view class rule to reveal the specified element
+            var selectedSection = document.getElementById(pageId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
