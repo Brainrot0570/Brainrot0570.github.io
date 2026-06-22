@@ -8,6 +8,7 @@
         <style>
             :root {
                 --primary: #160F29;
+                --deep: #1a365d;
                 --accent: #246A73;
                 --secondary: #368F8B;
                 --bright: #3182ce;
@@ -47,13 +48,22 @@
                 border-radius: 4px;
             }
 
+            figcaption a {
+                color: var(--accent); 
+                font-weight: bold;
+            }
+
             nav a:hover, nav a:focus {
                 color: var(--light);
                 background-color: var(--secondary);
             }
 
+            footer a {
+                color: var(--white);
+            }
+
             .divider {
-                color: var(--bright);
+                color: var(--light);
                 padding: 0 4px;
                 user-select: none;
             }
@@ -108,24 +118,11 @@
                 margin-top: 8px;
                 font-size: 10pt;
                 color: var(--primary);
-                font-style: italic;
             }
 
             ul, ol {
                 margin: 0 0 15px 0;
                 padding-left: 20px;
-            }
-
-            form {
-                background-color: #f7fafc;
-                padding: 15px;
-                border: 1px solid #e2e8f0;
-                border-radius: 6px;
-                margin: 15px 0;
-            }
-
-            .form-group {
-                margin-bottom: 12px;
             }
 
             label {
@@ -135,8 +132,8 @@
             }
 
             button {
-                background-color: #3182ce;
-                color: #ffffff;
+                background-color: var(--bright);
+                color: var(--light);
                 border: none;
                 padding: 10px 15px;
                 border-radius: 4px;
@@ -145,7 +142,7 @@
             }
 
             button:hover {
-                background-color: #2b6cb0;
+                background-color: var(--bright);
             }
 
             blockquote {
@@ -158,12 +155,12 @@
             }
 
             footer {
-                background-color: #1a365d;
-                color: #ffffff;
+                background-color: var(--deep);
+                color: var(--light);
                 text-align: center;
                 padding: 25px 15px;
                 margin-top: 40px;
-                border-top: 4px solid #3182ce;
+                border-top: 4px solid var(--bright);
             }
 
             .validation-buttons {
@@ -172,8 +169,8 @@
 
             .val-btn {
                 display: inline-block;
-                background-color: #4a5568;
-                color: #ffffff;
+                background-color: var(--deep);
+                color: var(--light);
                 padding: 8px 14px;
                 margin: 5px;
                 text-decoration: none;
@@ -183,7 +180,7 @@
             }
 
             .val-btn:hover {
-                background-color: #718096;
+                background-color: var(--primary);
             }
 
             .slideshow-container {
@@ -260,11 +257,23 @@
                 <p>
                     Flying airplanes and flight simulators is a challenging hobby that requires a lot of concentration and precision. I enjoy hobbies that help me to improve myself and learn skills that I can apply in other areas of life. 
                 </p>
+                <figure>
+                    <img src="images/plane.png" alt="3D rendered airplane from flight simulator software X-Plane">
+                    <figcaption>
+                        This is a screenshot from X-Plane, the flight simulator software I use. 
+                    </figcaption>
+                </figure>
+                <p>
+                    Flight simulators are a fun, low-cost, and low-stress way to practice flying and have fun with different airplane models without having to worry about renting equipment, paying instructors, and safety. 
+                </p>
             </section>
             <section id="who">
                 <h2>About Me</h2>
                 <p>
-                    My name is Taylor Stewart, and I have been interested in flying airplanes and flight simulators since I was 14 years old. I first flew a plane at 15 years old, before I had my drivers' license. 
+                    I have been interested in flying airplanes and flight simulators since I was 14 years old. I first flew a plane at 15 years old, before I had my drivers' license. I have a student pilot license, which means that I can fly a plane as long as I'm supervised by an instructor(either from the copilot seat or from the ground). I haven't been in the pilot's seat of a real plane in a while now due to being busy with school, but I enjoy "flying" my flight simulator quite often. 
+                </p>
+                <p>
+                    In addition to flying planes in X-Plane, I sometimes use my flight simulator equipment to fly airplanes in video games. While this may not be the most realistic practice, I think it has helped me improve my situational awareness. 
                 </p>
                 <figure>
                     <img src="images/selfie2.jpg" alt="Selfie-style photo of Taylor Stewart and his flight instructor together in an airplane.">
@@ -276,14 +285,32 @@
             <section id="when">
                 <h2>Times and Seasons</h2>
                 <p>
-                    when
+                    My favorite time of year to fly is winter. Smaller planes like the ones student pilots fly often don't have good heat or air conditioning systems, and I much prefer the cold over the heat. Although, when you get to a certain altitude, the air becomes much cooler and it doesn't matter as much. 
+                </p>
+                <figure>
+                    <img src="images/instr.jpg" alt="The instrument panel on a Cessna 172 Skyhawk as seen from the pilot seat">
+                    <figcaption>
+                        The instrument panel on a Cessna 172 Skyhawk as seen from the pilot seat.
+                    </figcaption>
+                </figure>
+                <p>
+                    Flying at night is vastly different than flying during the day. When visibility is low, pilots have to rely on the plane's instruments, rather than their own vision. This can make navigating much more difficult. 
                 </p>
             </section>
             <section id="where">
                 <h2>Places</h2>
                 <p>
-                    where
+                    Finding a good flight school can be difficult, especially in a busy airspace like Charlotte. Flight students typically start out in rural areas, where airports are calm. 
                 </p>
+                <p>
+                    A major benefit of flight simulator technology is that it allows people to practice flying anywhere. Mine is in my home office, which allows me to practice whenever I like. Some flight sim setups are so advanced that pilots are allowed to log hours piloting them as if they were piloting a real plane. 
+                </p>
+                <figure>
+                    <img src="images/flightSim.jpg" alt="intricate flight simulator setup">
+                    <figcaption>
+                        This is the flight simulator at the flight school I took lessons at. This setup is very advanced and expensive. 
+                    </figcaption>
+                </figure>
             </section>
             <section id="how">
                 <h2>What equipment do you need?</h2>
@@ -337,22 +364,40 @@
                 </p>
                 <figure>
                     <img src="images/cessna.jpg" alt="Cessna Skyhawk in flight">
-                    <figcaption>This picture shows a Cessna Skyhawk, the type of plane most students begin flying when they are first studying to become a licensed pilot. </figcaption>
+                    <figcaption>This picture shows a Cessna Skyhawk, the type of plane most students begin flying when they are first studying to become a licensed pilot. This image is from unsplash.com and is free to use. </figcaption>
                 </figure>
+                <p>
+                    One thing my flight instructor said to me has stuck with me for a long time. He said that his students usually get up in the air and look down at the tiny houses and ant-like cars, and find that they either feel very big, or very small. 
+                </p>
             </section>
             <section id="ai">
                 <h2>Use of AI</h2>
                 <p>
-                    I 
+                    Due to the complexity of flight controls and airplanes, I elected not to use AI in any of my images. I made this decision because I deeply appriciate the intricate equipment and machinery involved in airplanes, and I would like to keep my images as accurate as possible. This propably made the creation of this webpage more difficult than it had to be, but I enjoyed taking photos of my setup. All of the images on this webpage are my own, except one sourced from unsplash.com, a free image website. 
                 </p>
+                <figure>
+                    <img src="images/cessna.jpg" alt="Cessna Skyhawk in flight">
+                    <figcaption>
+                        <a href="https://unsplash.com/photos/a-small-airplane-flying-through-a-cloudy-sky-sRSDoc3SCyU">
+                            Sourced from unsplash.com
+                        </a>
+                    </figcaption>
+                </figure>
+                <p>
+                    AI prompts for html and javascript:
+                </p>
+                <ul>
+                    <li>Help me write html and javascript to insert a slideshow of images into a webpage</li>
+                    <li>I have a webpage that uses &lt;section&gt; to separate content. Help me write javascript to keep these sections hidden until they are selected. </li>
+                </ul>
             </section>
 
         </main>
         <footer>
             <p>
-                <a href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
-                <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
-                <a href="https://wave.webaim.org/">Check Accessibility</a>
+                <a class="val-btn" href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
+                <a class="val-btn" href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+                <a class="val-btn" href="https://wave.webaim.org/report#/https://webpages.charlotte.edu/tstewa60/itis3135/hobby/">Check Accessibility</a>
             </p>
             <p>
                 Site Designed by <a href = "../taylorstewartdesigns.com">Taylor Stewart Designs&copy; 2026</a>
@@ -378,7 +423,6 @@
             });
 
             var slideIndex = 0;
-            initSlideshow();
 
             function initSlideshow() {
                 var slides = document.querySelectorAll('.slide');
@@ -386,6 +430,7 @@
                     slides[0].style.display = 'block'; // Show first slide
                 }
             }
+            initSlideshow();
 
             function moveSlide(step) {
                 var slides = document.querySelectorAll('.slide');
