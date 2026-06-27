@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, inital-scale=1.0">
+            <title>Taylor Stewart's Tough Serval || ITIS3135 || Highlight</title>
+            <link rel="stylesheet" href="styles/default.css">
+            <link rel="icon" type="image/x-icon" href="./images/desktop.ico">
+            <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div data-include="./components/header.html"></div>
+        <main>
+            <h2>
+                Images
+            </h2>
+            <p>The purpose of this page is to demonstrate how pictures can be manipulated, and how these manipulations can effect the way they are viewed on a webpage. This webpage gives many examples of bad image manipulation, which distorts images.</p>
+            
+            <section id="section-serval">
+                <h3>Demonstrating Image Manipulation with a Serval Photo from Pexels.com</h3>
+            
+                <p>I picked this image because my animal character for this class is a serval, and I think it looks nice with my personal photo, considering they both include cats. This image was taken by Gundula Vogel on Pexels.com. She photographs a lot of wildlife, so she must enjoy the outdoors (as do I!). This image's original format is JPG, and its original size is 7008x4672 pixels, 3.77 MB.</p>
+            
+                <article>
+                <h4>Original Image in Multiple Formats</h4>
+                <div class="link-row">
+                    <a href="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel.jpg" target="_blank">
+                    Original JPG format 
+                    </a>
+                    <a href="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel.gif" target="_blank">
+                    Original Image as a GIF 
+                    </a>
+                    <a href="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel-greyscale.jpg" target="_blank">
+                    Original Image in Greyscale 
+                    </a>
+                    <a href="./images/serene_serval_resting_in_lush_greenery_31651302gundula_vogel_bw.jpg" target="_blank">
+                    Original Image in Black &amp; White 
+                    </a>
+                </div>
+                </article>
+            
+                <article>
+                <h4>Downsizing Images with CSS</h4>
+                <p>The image below is the original full-resolution file, displayed at less than 10% of its original width using inline CSS.</p>
+                <figure>
+                    <img
+                    src="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel.jpg"
+                    alt="Serval resting in ivy. CSS resized"
+                    style="width: 600px;"
+                    >
+                    <figcaption>Full-resolution original, shrunk to 600px wide with CSS. The file is the original 3.77 MB image. The display size changed, but not the file size.</figcaption>
+                </figure>
+                </article>
+            
+                <article>
+                <h4>Proper Reduction of Image with Editor</h4>
+                <p>Here the image has been resized to 600x400 px in Microsoft Paint before being placed on the page.</p>
+                <figure>
+                    <img
+                    src="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel-600x400.jpg"
+                    alt="Serval resized to 600x400 with Paint"
+                    style="width: 600px; height: 400px;"
+                    >
+                    <figcaption>Resized to 600x400 px in Paint.</figcaption>
+                </figure>
+                </article>
+            
+                <article>
+                <h4>Improper Image Proportions with CSS</h4>
+                <p>All four images below start from the 600x400 Paint-resized version. Two have their height squished (33% and 66% smaller than original), and two have their width squished (33% and 66%).</p>
+                <div class="img-row">
+                    <figure>
+                    <img src="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel-600x268.jpg"
+                        alt="Serval with height squished 33%"
+                        style="width:600px; height:268px;">
+                    <figcaption>Height squished 33% (600x268). The serval looks compressed.</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel-600x179.jpg"
+                        alt="Serval height squished 66%"
+                        style="width:600px; height:179px;">
+                    <figcaption>Height squished 66% (600x179). The image is extremely distorted.</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel-400x400.jpg"
+                        alt="Serval width squished 33%"
+                        style="width:400px; height:400px;">
+                    <figcaption>Width squished 33% (400x400). The image is too narrow.</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel-268x400.jpg"
+                        alt="Serval width squished 66%"
+                        style="width:268px; height:400px;">
+                    <figcaption>Width squished 66% (268x400). The image is distorted.</figcaption>
+                    </figure>
+                </div>
+                </article>
+            
+                <article>
+                <h4>Improper Enlarging with CSS</h4>
+                <p>Both images below are displayed at 600x400 px using CSS, but the second one was saved at only 150x100 px. This makes the smaller image appear blurry and low-quality.</p>
+                <div class="img-row">
+                    <figure>
+                    <img src="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel-600x400.jpg"
+                        alt="Serval image 600x400"
+                        style="width:600px; height:400px;">
+                    <figcaption>Correct 600x400 px source displayed at 600x400. The image is clear.</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="./images/serene-serval-resting-in-lush-greenery-31651302@gundula-vogel-150x100.jpg"
+                        alt="Serval 150x100 enlarged to 600x400"
+                        style="width:600px; height:400px;">
+                    <figcaption>Small 150x100 px source, enlarged to 600x400 with CSS. The image is blurry.</figcaption>
+                    </figure>
+                </div>
+                </article>
+            </section>
+            <hr>
+            
+            
+            <section id="section-amp">
+                <h3>Demonstrating Image Manipulation with a Guitar Amp</h3>
+            
+                <p>My image is a (3789x3746 pixels) photo of my hand petting my cat in front of a guitar amp. The amp is perfectly square. The original file format is JPEG, with a size of 2.38 MB.</p>
+            
+                <article>
+                <h4>Original Image in Multiple Formats</h4>
+                <div class="link-row">
+                    <a href="./images/amp-and-hand.jpeg" target="_blank">
+                    Original JPEG format
+                    </a>
+                    <a href="./images/amp-and-hand.gif" target="_blank">
+                    Original Image as a GIF
+                    </a>
+                    <a href="./images/amp-and-hand-greyscale.jpeg" target="_blank">
+                    Original Image in Greyscale
+                    </a>
+                    <a href="./images/amp_and_hand_bw.jpeg" target="_blank">
+                    Original Image in Black &amp; White
+                    </a>
+                </div>
+                </article>
+            
+                <article>
+                <h4>Downsizing Images with CSS</h4>
+                <p>The image below is the original 3789x3746 px file, displayed at 600px wide using inline CSS. </p>
+                <figure>
+                    <img
+                    src="./images/amp-and-hand.jpeg"
+                    alt="Amp and hand. CSS resized"
+                    style="width: 600px;"
+                    >
+                    <figcaption>Full-resolution original image (2.38 MB) shrunk to 600px wide with CSS. </figcaption>
+                </figure>
+                </article>
+            
+                <article>
+                <h4>Proper Reduction of Image with Editor</h4>
+                <p>Resized in Microsoft Paint to 600x593 px, maintaining the proportions of the original.</p>
+                <figure>
+                    <img
+                    src="./images/amp-and-hand-600x593.jpg"
+                    alt="Amp and hand properly resized to 600x593"
+                    style="width: 600px; height: 593px;"
+                    >
+                    <figcaption>Square guitar amp resized to 600x593 px in Paint.</figcaption>
+                </figure>
+                </article>
+            
+                <article>
+                <h4>Improper Image Proportions with CSS</h4>
+                <p>All four images start from the 600x593 file. Two are squished vertically, two squished horizontally. These examples demonstrate what happens when images are incorrectly resized. </p>
+                <div class="img-row">
+                    <figure>
+                    <img src="./images/amp-and-hand-600x397.jpg"
+                        alt="Amp with height squished 33%"
+                        style="width:600px; height:397px;">
+                    <figcaption>Height squished 33% (600x397). The square guitar amp now looks like a rectangle.</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="./images/amp-and-hand-600x266.jpg"
+                        alt="Amp with height squished 66%"
+                        style="width:600px; height:266px;">
+                    <figcaption>Height squished 66% (600x266). This image looks flattened.</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="./images/amp-and-hand-400x593.jpg"
+                        alt="Amp with width squished 33%"
+                        style="width:400px; height:593px;">
+                    <figcaption>Width squished 33% (400x593). The image is more narrow than it should be.</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="./images/amp-and-hand-268x593.jpg"
+                        alt="Amp width squished 66%"
+                        style="width:268px; height:593px;">
+                    <figcaption>Width squished 66% (268x593). The image is very distorted.</figcaption>
+                    </figure>
+                </div>
+                </article>
+            
+                <article>
+                <h4>Improper Enlarging with CSS</h4>
+                <p>Both images are displayed at 600x593 px with CSS. The second one was saved at only 150x148 px and displayed at 600x593 using CSS. This demonstrates how incorrect resizing can make images appear poor quality. </p>
+                <div class="img-row">
+                    <figure>
+                    <img src="./images/amp-and-hand-600x593.jpg"
+                        alt="Amp 600x593"
+                        style="width:600px; height:593px;">
+                    <figcaption>Correct 600x593 px source. The image is clear and properly displayed.</figcaption>
+                    </figure>
+                    <figure>
+                    <img src="./images/amp-and-hand-150x148.jpg"
+                        alt="Amp 150x148 enlarged to 600x593"
+                        style="width:600px; height:593px;">
+                    <figcaption>Image source is 150x148 px, displayed at 600x593 with CSS. This image looks blurry and lacks detail. </figcaption>
+                    </figure>
+                </div>
+                </article>
+            </section>
+            <hr>
+            <h3>
+                AI Usage
+            </h3>
+            <p>
+                I pasted the instructions for this assignment into Claude and asked it to write me an outline. This helped me to keep track of where each image was supposed to go, and how the page should be structured overall. 
+            </p>
+            <h3>
+                Challenges
+            </h3>
+            <p>
+                This biggest challenge for this assignment was keeping track of all of the files needed. Being careful to name them accurately was very helpful, as was having a solid outline for my document. 
+            </p>
+        </main>
+      <div data-include="./components/footer.html"></div>
+    <script src="./scripts/HTMLInclude.min.js"></script>
+    </body>
+</html>
