@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, inital-scale=1.0">
+            <title>Taylor Stewart's Tough Serval || ITIS3135 || Introduction Form</title>
+            <link rel="stylesheet" href="styles/default.css">
+            <link rel="icon" type="image/x-icon" href="./images/desktop.ico">
+            <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+<div data-include="./components/header.html"></div>
+<main>
+    <div class="offwhiteleft" id="formSection">
+    <form id="myForm">
+        <label>First Name:
+        <input type="text" id="firstNameInput" placeholder="FIRST" />
+        </label><br/>
+        <label>Middle Name (or Initial) <em>(optional)</em>:
+        <input type="text" id="middleNameInput" placeholder="MIDDLE" />
+        </label><br/>
+        <label>Nickname/Preferred Name <em>(optional)</em>:
+        <input type="text" id="nicknameInput" placeholder="NICKNAME" />
+        </label><br/>
+        <label>Last Name:
+        <input type="text" id="lastNameInput" placeholder="LAST" />
+        </label><br/><br/>
+
+        <h3>Mascot</h3>
+        <label>Mascot Adjective:
+        <input type="text" id="mascotAdjInput" placeholder="ADJECTIVE" />
+        </label><br/>
+        <label>Mascot Animal:
+        <input type="text" id="mascotAnimalInput" placeholder="MASCOT" />
+        </label><br/>
+        <label>Divider (e.g. ~, |, ♥️):
+        <input type="text" id="dividerInput" placeholder="||" />
+        </label><br/><br/>
+
+        <label>Photo:
+        <input type="file" id="myPhoto" accept="image/*" />
+        </label><br/>
+        <label>Photo Caption:
+        <input type="text" id="captionInput" placeholder="CAPTION" />
+        </label><br/>
+        <label>Photo Alt Text <em>(what you're doing in the photo, e.g. "riding a four wheeler/ATV")</em>:
+        <input type="text" id="photoAltInput" placeholder="ALT TEXT" />
+        </label><br/><br/>
+
+        <label>Short Summary <em>(the intro paragraph under your photo)</em>:<br/>
+        <textarea id="summaryInput" placeholder="INTRO PARAGRAPH"></textarea>
+        </label><br/><br/>
+
+        <label>Personal Background:<br/>
+        <textarea id="personalInput" placeholder="PERSONAL BACKGROUND"></textarea>
+        </label><br/>
+        <label>Professional Background:<br/>
+        <textarea id="professionalInput" placeholder="PROFESSIONAL BACKGROUND"></textarea>
+        </label><br/>
+        <label>Academic Background:<br/>
+        <textarea id="academicInput" placeholder="ACADEMIC BACKGROUND"></textarea>
+        </label><br/>
+        <label>Background in this Subject:<br/>
+        <textarea id="subjectBackgroundInput" placeholder="SUBJECT BACKGROUND"></textarea>
+        </label><br/>
+        <label>Primary Computer Platform:<br/>
+        <textarea id="platformInput" placeholder="PRIMARY COMPUTER"></textarea>
+        </label><br/>
+        <label>Backup Work Computer & Location Plan:<br/>
+        <textarea id="backupComputerInput" placeholder="BACKUP COMPUTER"></textarea>
+        </label><br/>
+        <label>Where I'm From:<br/>
+        <textarea id="fromInput" placeholder="I AM FROM..."></textarea>
+        </label><br/><br/>
+
+        <h3>Classes</h3>
+        <div id="classList">
+        <div class="classItem">
+            <input type="text" class="className" placeholder="CLASS NAME" />
+            <input type="text" class="classNumber" placeholder="CLASS CODE(ITIS3135)" />
+            <input type="text" class="classReason" placeholder="REASON FOR TAKING" />
+            <button type="button" class="deleteClassBtn">Delete</button>
+        </div>
+        </div>
+        <button type="button" id="addClassBtn">+ Add Class</button>
+
+        <br /><br />
+        <h3>Acknowledgment</h3>
+        <label>Acknowledgment Statement:<br/>
+        <textarea id="ackStatementInput" placeholder="LEAVE BLANK FOR DEFAULT STATEMENT"></textarea>
+        </label><br/>
+        <label>Acknowledgment Date:
+        <input type="text" id="ackDateInput" placeholder="YY/MM/DD"/>
+        </label><br/><br/>
+
+        <h3>Quote</h3>
+        <label>Quote:<br/>
+        <textarea id="quoteInput" placeholder="QUOTE"></textarea>
+        </label><br/>
+        <label>Quote Author:
+        <input type="text" id="quoteAuthorInput" placeholder="AUTHOR" />
+        </label><br/><br/>
+
+        <h3>Optional Extras</h3>
+        <label>Funny Thing <em>(optional)</em>:<br/>
+        <textarea id="funnyInput" placeholder="SOMETHING FUNNY ABOUT ME IS..."></textarea>
+        </label><br/>
+        <label>Something I Would Like to Share <em>(optional)</em>:<br/>
+        <textarea id="shareInput" placeholder="I WOULD LIKE TO SHARE..."></textarea>
+        </label><br/><br/>
+
+        <h3>Links</h3>
+        <label>LinkedIn:
+        <input type="url" id="linkedinInput" placeholder="https://linkedin.com/in/username" />
+        </label><br/>
+        <label>GitHub:
+        <input type="url" id="githubInput" placeholder="https://github.com/username" />
+        </label><br/>
+        <label>CLT Web (GitHub.io root):
+        <input type="url" id="githubioInput" placeholder="https://username.github.io" />
+        </label><br/>
+        <label>GitHub.io (course site):
+        <input type="url" id="courseSiteInput" placeholder="https://username.github.io/itis3135/" />
+        </label><br/>
+        <label>freeCodeCamp:
+        <input type="url" id="freecodeInput" placeholder="https://freecodecamp.org/username" />
+        </label><br/>
+        <label>Codecademy:
+        <input type="url" id="codecademyInput" placeholder="https://codecademy.com/profiles/username" />
+        </label><br/><br/>
+
+        <button type="submit">Submit</button>
+        <button type="button" id="clearBtn">Clear</button>
+    </form>
+    </div>
+</main>
+
+    <div id="output"></div>
+    <button type="button" id="resetBtn" style="display:none;">Reset</button>
+      <div id="siteFooter" data-include="./components/footer.html"></div>
+
+    <script src="./scripts/intro-script.js"></script>
+    
+    </body>
+</html>
