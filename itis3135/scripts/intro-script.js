@@ -184,7 +184,7 @@ document.getElementById("myForm").addEventListener("submit", function (e) {
   function renderOutput(photoSrc) {
     document.getElementById("output").innerHTML =
       "<main>" +
-      "<h2>Introduction</h2>" +
+      "<h2>Introduction Form</h2>" +
       "<h3>" + name + " " + divider + " " + mascotAdj + " " + mascotAnimal + "</h3>" +
       "<figure>" +
       "<img src='" + photoSrc + "' height='400' alt='" + name + " " + photoAlt + "'>" +
