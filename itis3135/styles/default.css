@@ -9,6 +9,10 @@ body {
   max-width: fit-content;
 }
 
+hr  {
+  border-color:#ffffcc
+}
+
 nav {
   display: flex;
   gap: 16px;
@@ -18,6 +22,14 @@ nav {
 h1 {
   font-size: 3rem;
   margin-bottom: 12px;
+}
+
+main p {
+  text-align: left;
+}
+
+.author {
+  text-align: center;
 }
 
 a {
@@ -93,7 +105,12 @@ figcaption {
   margin: 0 auto;
 }
 
-/*FIXES SPACING ON FORM*/
+.agreement{
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/*FIXES CLASS SPACING ON FORM*/
 .classItem { 
   display: flex;
   gap: 8px;

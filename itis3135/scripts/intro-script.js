@@ -26,7 +26,7 @@ const defaults = {
   platform: "My main computer is a Thinkpad X1 running Arch Linux.",
   backupComputer: "When I have compatibility issues with linux, my backup is a laptop running Windows 11(though Windows 10 is much better in my opinion).",
   from: "I have lived in NC for my entire life, though I had not spent much time in the Charlotte area prior to being admitted to UNC Charlotte. Over the summer, I am taking only online classes, but during Spring and Fall semesters I commute to campus. So far, I have enjoyed campus and the surrounding area. There are so many interesting things to see and do!",
-  quote: " I have two Microsoft Outlooks, and neither one of those are working. ",
+  quote: "I have two Microsoft Outlooks, and neither one of those are working.",
   quoteAuthor: "Artemis II Astronaut",
   classes: [
     {
@@ -177,7 +177,7 @@ document.getElementById("myForm").addEventListener("submit", function (e) {
   let classesHTML = "";
   classes.forEach(function (c) {
     classesHTML +=
-      "<li><strong>" + c.number + "</strong> - " + c.name + ": " + c.reason + "</li>";
+      "<li><strong>" + c.number + " - " + c.name + ":</strong> " + c.reason + "</li>";
   });
 
   // Build the final markup
@@ -191,7 +191,6 @@ document.getElementById("myForm").addEventListener("submit", function (e) {
       "<figcaption>" + caption + "</figcaption>" +
       "</figure>" +
       "<p>" + summary + "</p>" +
-      "<p><i>" + ackStatement + " " + ackDate + "</i></p>" +
       "<div class='offwhiteleft'>" +
       "<ul>" +
       "<li><strong>Personal Background: </strong>" + personal + "</li>" +
@@ -208,8 +207,9 @@ document.getElementById("myForm").addEventListener("submit", function (e) {
       (share ? "<li><strong>Something I Would Like to Share: </strong>" + share + "</li>" : "") +
       "</ul>" +
       "</div>" +
-      "<p><q>" + quote + "</q></p>" +
-      "<p>- " + quoteAuthor + "</p>" +
+      "<q>" + quote + "</q>" +
+      "<p class='author'><i>- " + quoteAuthor + "</i></p>" +
+      "<p class='agreement'><i>" + ackStatement + " " + ackDate + "</i></p>" +
       "</main>" +
       "<p>" +
       "<a href='" + github + "' target='_blank'>GitHub</a> " +

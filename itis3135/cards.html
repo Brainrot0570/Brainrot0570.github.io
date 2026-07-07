@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, inital-scale=1.0">
+            <title>Taylor Stewart's Tough Serval || ITIS3135 || Highlight</title>
+            <link rel="stylesheet" href="styles/default.css">
+            <link rel="icon" type="image/x-icon" href="./images/desktop.ico">
+            <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <style>
+    #playing-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+        box-sizing: border-box;
+      width: 150px;
+      height: 220px;
+      display: flex;
+      justify-content: space-between;
+      border: 5px solid #333;
+      border-radius: 10px;
+      padding: 12px;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .left {
+      align-self: flex-start;
+    }
+
+    .middle {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      font-size: 2.5rem;
+    }
+
+    .right {
+      align-self: flex-end;
+    }
+
+    /* 25% opacity achieved by blending with 75% white (255, 255, 255, 0.75) */
+    .cat-left {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("images/catleft.jpg")
+    }
+
+    .cat-right {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("images/catright.jpg");
+    }
+
+    .cat-straight {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("images/catstraight.jpg");
+    }
+
+    .red {
+      color: #ff4d4d;
+      border-color: #ff4d4d;
+    }
+  </style>
+</head>
+
+<body>
+      <div data-include="./components/header.html"></div>
+
+  <main id="playing-cards">
+    <div class="card cat-left">
+      <div class="left">A ♠</div>
+      <div class="middle">
+        <span>♠</span>
+      </div>
+      <div class="right">A ♠</div>
+    </div>
+
+    <div class="card red cat-right">
+      <div class="left">K ♥</div>
+      <div class="middle">
+        <span>♥</span>
+      </div>
+      <div class="right">K ♥</div>
+    </div>
+
+    <div class="card red cat-straight">
+      <div class="left">Q ♦</div>
+      <div class="middle">
+        <span>♦</span>
+      </div>
+      <div class="right">Q ♦</div>
+    </div>
+  </main>
+      <div data-include="./components/footer.html"></div>
+    <script src="./scripts/HTMLInclude.min.js"></script>
+
+</body>
+
+</html> 
