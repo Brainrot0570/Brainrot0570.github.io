@@ -11,14 +11,86 @@
     <body>
       <div data-include="./components/header.html"></div>
         <main>
-            <h2>
-                Inventory
-            </h2>
-            <div class="offwhiteleft">
-                <p>
-                    Coming soon!
-                </p>
-            </div>
+  <h1>Inventory</h1>
+ 
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Designer</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="in-stock">
+        <td>Mousepad (6"x6")</td>
+        <td>Taylor Stewart</td>
+        <td>Computer Accessories</td>
+        <td><span class="status">In Stock</span></td>
+        <td>
+          <span class="rate three">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+    </td>
+</tr>
+<tr class="out-of-stock">
+    <td>Mousepad (30"x12")</td>
+    <td>Tough Serval</td>
+    <td>Computer Accessories</td>
+    <td><span class="status">Out of Stock</span></td>
+    <td>
+        <span class="rate three">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+    </td>
+</tr>
+        <tr class="in-stock">
+        <td>Keyboard Caps</td>
+        <td>Taylor Stewart</td>
+        <td>Computer Accessories</td>
+        <td><span class="status">In Stock</span></td>
+        <td>
+            <span class="rate two">
+            <span></span>
+            <span></span>
+            <span></span>
+            </span>
+        </td>
+        </tr>
+      <tr class="in-stock">
+        <td>T-Shirt</td>
+        <td>Taylor Stewart</td>
+        <td>Clothing</td>
+        <td><span class="status">In Stock</span></td>
+        <td>
+          <span class="rate three">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </td>
+      </tr>
+      <tr class="in-stock">
+        <td>Coffee Mug</td>
+        <td>Tough Serval</td>
+        <td>Other</td>
+        <td><span class="status">In Stock</span></td>
+        <td>
+          <span class="rate two">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
         </main>
       <div data-include="./components/footer.html"></div>
     <script src="./scripts/HTMLInclude.min.js"></script>

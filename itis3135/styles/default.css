@@ -1,3 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+    --primary: #003300;
+    --deep: #021702;
+    --accent: #ffffcc;
+    --secondary: #599859;
+    --bright: #16e916;
+    --light: #8aed8a;
+    --white: #ddd;
+}
+
+
 body {
   font-family: Courier, monospace;
   margin: 60px auto;
@@ -177,4 +192,77 @@ button:focus {
   background-color: #599859;
   box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
   color: #ffffcc;
+}
+
+/*========Stock==============*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+thead tr {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid var(--secondary);
+}
+
+tr[class="in-stock"] {
+  background-image: linear-gradient(to right, #d4fc79, #96e6a1);
+}
+
+tr[class="out-of-stock"] {
+  background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+}
+
+span {
+  display: inline-block;
+}
+
+tr[class="in-stock"] span[class="status"] {
+  border: 2px solid #1e88e5;
+  background-image: linear-gradient(to right, #a1c4fd, #c2e9fb);
+}
+
+
+tr[class="out-of-stock"] span[class="status"] {
+  border: 2px solid #ad1457;
+  background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+}
+
+span[class="status"],
+span[class^="rate"] {
+  height: 2rem;
+  width: 7rem;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+span[class^="rate"] > span {
+  border: 1px solid var(--deep);
+  border-radius: 50%;
+  margin: 0 2px;
+  height: 0.9rem;
+  width: 0.9rem;
+  background-color: #fff;
+}
+
+span[class~="one"] > span:first-child {
+  background-image: linear-gradient(to bottom right, #ffd700, #ff8c00);
+}
+
+span[class~="two"] > span:nth-child(-n + 2) {
+  background-image: linear-gradient(to bottom right, #fbff00, #9a8510);
+}
+
+span[class~="three"] span {
+  background-image: linear-gradient(to bottom right, var(--bright), var(--deep));
 }
