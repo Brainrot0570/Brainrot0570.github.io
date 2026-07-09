@@ -20,7 +20,7 @@ body {
   color: #ffffcc;
   background: #003300;
   display: block;
-  text-align: center;
+  text-align: left;
   max-width: fit-content;
 }
 
@@ -30,13 +30,26 @@ hr  {
 
 nav {
   display: flex;
-  gap: 16px;
+  gap: 6px;
   justify-content: center;
 }
 
 h1 {
   font-size: 3rem;
   margin-bottom: 12px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+footer{
+  text-align: center;
 }
 
 main p {
@@ -265,4 +278,61 @@ span[class~="two"] > span:nth-child(-n + 2) {
 
 span[class~="three"] span {
   background-image: linear-gradient(to bottom right, var(--bright), var(--deep));
+}
+
+/*========Adaptive Sidebar Nav==============*/
+
+.adaptive-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--deep);
+  border-bottom: 1px solid var(--secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin: 5px auto;
+}
+
+
+.adaptive-nav a.nav-link {
+  display: block;
+  color: var(--light);
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0;
+  border-radius:10px;
+  border: 3px solid var(--deep);
+  font-size: 0.95rem;
+  transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+.adaptive-nav a.nav-link:hover {
+  background-color: var(--primary);
+  border-radius:10px;
+  border: 3px solid var(--bright);
+  color: var(--bright);
+}
+
+.adaptive-nav a.nav-link:active {
+  background-color: var(--secondary);
+  color: var(--deep);
+}
+
+
+@media (max-width: 768px) {
+  .adaptive-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .adaptive-nav a.nav-link {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border-bottom: 1px solid var(--secondary);
+  }
 }
