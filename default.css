@@ -32,23 +32,26 @@ a:active {
   color: #b3b300;
 }
 
-.intro {
+/* .intro {
   padding: 24px 28px;
   line-height: 1.7;
   background: #ffffcc;
   color: #0c266e;
   margin-bottom: 20px;
-}
+} */
 
 main {
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 24px 28px;
-  line-height: 1.7;
+  line-height: 3;
   background: #ffffcc;
   color: #0c266e;
+  margin: 20px;
 }
 
 hr {
   border-color: #ffffcc;
+  border: 3px solid #1a2e69;
+  margin: 30px;
 }

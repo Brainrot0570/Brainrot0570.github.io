@@ -14,7 +14,7 @@
 
 
 body {
-  font-family: Courier, monospace;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 60px auto;
   padding: 0 20px;
   color: #ffffcc;
@@ -35,6 +35,7 @@ nav {
 }
 
 h1 {
+  font-family: Courier, monospace;
   font-size: 3rem;
   margin-bottom: 12px;
   text-align: center;
@@ -84,8 +85,12 @@ main {
   margin: 0 auto;
 }
 
+main a {
+  color: var(--secondary);
+}
+
 .offwhiteblock a {
-  color:#021702
+  color:var(--secondary)
 }
 
 .offwhiteblock a:hover {
@@ -336,4 +341,8 @@ span[class~="three"] span {
     text-align: center;
     border-bottom: 1px solid var(--secondary);
   }
+}
+
+#pricing p{
+  text-align: center;
 }

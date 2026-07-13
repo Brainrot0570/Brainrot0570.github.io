@@ -1,9 +1,9 @@
   :root {
-    --primary: #16160E;
+    --primary: #343420;
     --accent: #A4C2A5;
     --secondary: #3B452E;
-    --light: #D8DAD3;
-    --muted: #C0C1BE;
+    --light: #cdcfc8;
+    --muted: #8b8e85;
   }
 
   body {
@@ -16,7 +16,7 @@
   header {
     background-color: var(--primary);
     color: var(--light);
-    padding: 40px 20px;
+    padding: 20px 20px;
     text-align: center;
     border-bottom: 5px solid var(--accent);
     display: flex;
@@ -31,7 +31,7 @@
     object-fit: contain;
   }
 
-  header h1 {
+  h1 {
     margin: 0;
     font-size: 2.5em;
     letter-spacing: 2px;
@@ -49,7 +49,7 @@
     padding: 20px;
     border-left: 4px solid var(--secondary);
     border-right: 4px solid var(--secondary);
-    background-color: #ffffff;
+    background-color: var(--accent);
   }
 
   .info-block p {
@@ -58,7 +58,7 @@
     color: var(--primary);
   }
 
-  .services-block h2, .info-block h2 {
+  h2 {
     margin-top: 0;
     color: var(--secondary);
     border-bottom: 2px solid var(--muted);
@@ -83,13 +83,24 @@
     font-family: 'Courier New', monospace;
   }
 
-  .contact-block h2 {
-    margin-top: 0;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-
   .contact-block p {
     margin: 5px;
   }
+
+footer {
+  color: var(--secondary);
+  text-align: center;
+  margin: 25px;
+}
+
+footer a{
+  color: var(--secondary);
+}
+
+footer a:hover{
+  color: var(--primary);
+}
+
+ul{
+  list-style-type:square;
+}
