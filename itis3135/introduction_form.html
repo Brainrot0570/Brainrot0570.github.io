@@ -5,6 +5,15 @@
             <meta name="viewport" content="width=device-width, inital-scale=1.0">
             <title>Taylor Stewart's Tough Serval || ITIS3135 || Introduction Form</title>
             <link rel="stylesheet" href="styles/default.css">
+            <style>
+                .generatedBlock textarea {
+                    width: 100%;
+                    box-sizing: border-box;
+                    font-family: monospace;
+                    font-size: 0.9em;
+                    white-space: pre;
+                }
+            </style>
             <link rel="icon" type="image/x-icon" href="./images/desktop.ico">
             <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     </head>
@@ -12,73 +21,87 @@
 <div data-include="./components/header.html"></div>
 <main>
     <div class="offwhiteleft" id="formSection">
+    <h2>Introduction Form</h2>
+    <h3>Please Submit this Form!</h3>
     <form id="myForm">
         <label>First Name:
-        <input type="text" id="firstNameInput" placeholder="FIRST" />
+        <input type="text" id="firstNameInput" placeholder="FIRST" value="Taylor"/>
         </label><br/>
         <label>Middle Name (or Initial) <em>(optional)</em>:
-        <input type="text" id="middleNameInput" placeholder="MIDDLE" />
+        <input type="text" id="middleNameInput" placeholder="MIDDLE" value="" />
         </label><br/>
         <label>Nickname/Preferred Name <em>(optional)</em>:
-        <input type="text" id="nicknameInput" placeholder="NICKNAME" />
+        <input type="text" id="nicknameInput" placeholder="NICKNAME" value="" />
         </label><br/>
         <label>Last Name:
-        <input type="text" id="lastNameInput" placeholder="LAST" />
+        <input type="text" id="lastNameInput" placeholder="LAST" value="Stewart" />
         </label><br/><br/>
 
         <h3>Mascot</h3>
         <label>Mascot Adjective:
-        <input type="text" id="mascotAdjInput" placeholder="ADJECTIVE" />
+        <input type="text" id="mascotAdjInput" placeholder="ADJECTIVE" value="Tough" />
         </label><br/>
         <label>Mascot Animal:
-        <input type="text" id="mascotAnimalInput" placeholder="MASCOT" />
+        <input type="text" id="mascotAnimalInput" placeholder="MASCOT" value="Serval" />
         </label><br/>
         <label>Divider (e.g. ~, |, ♥️):
-        <input type="text" id="dividerInput" placeholder="||" />
+        <input type="text" id="dividerInput" placeholder="||" value="||" />
         </label><br/><br/>
 
         <label>Photo:
         <input type="file" id="myPhoto" accept="image/*" />
         </label><br/>
         <label>Photo Caption:
-        <input type="text" id="captionInput" placeholder="CAPTION" />
+        <input type="text" id="captionInput" placeholder="CAPTION" value="In my free time, I enjoy riding ATVs" />
         </label><br/>
         <label>Photo Alt Text <em>(what you're doing in the photo, e.g. "riding a four wheeler/ATV")</em>:
-        <input type="text" id="photoAltInput" placeholder="ALT TEXT" />
+        <input type="text" id="photoAltInput" placeholder="ALT TEXT" value="riding a four wheeler/ATV" />
         </label><br/><br/>
 
         <label>Short Summary <em>(the intro paragraph under your photo)</em>:<br/>
-        <textarea id="summaryInput" placeholder="INTRO PARAGRAPH"></textarea>
+        <textarea id="summaryInput" placeholder="INTRO PARAGRAPH">My name is Taylor and I came to UNC Charlotte this previous fall to study Computer Science with a concentration in Cyber Security. Outside of computer science, my hobbies include art, music, and riding ATVs. I have some coding experience in java and c, as well as a small amount of experience with python.</textarea>
         </label><br/><br/>
 
         <label>Personal Background:<br/>
-        <textarea id="personalInput" placeholder="PERSONAL BACKGROUND"></textarea>
+        <textarea id="personalInput" placeholder="PERSONAL BACKGROUND">I enjoy riding ATVs, such as four-wheelers and side-by-sides. I also enjoy drawing and painting in both digital and traditional styles. I try to challenge myself often and learn new things; I am always adopting new hobbies and learning new skills.</textarea>
         </label><br/>
         <label>Professional Background:<br/>
-        <textarea id="professionalInput" placeholder="PROFESSIONAL BACKGROUND"></textarea>
+        <textarea id="professionalInput" placeholder="PROFESSIONAL BACKGROUND">Previously I have mostly worked in customer service at small businesses. Working in customer service has taught me how to be patient and communicate with people. I have also worked in home-repair, which taught me a lot of valuable, hands-on skills that I will likely use for the rest of my life.</textarea>
         </label><br/>
         <label>Academic Background:<br/>
-        <textarea id="academicInput" placeholder="ACADEMIC BACKGROUND"></textarea>
+        <textarea id="academicInput" placeholder="ACADEMIC BACKGROUND">I'm a Computer Science major with a concentration in Cyber Security.</textarea>
         </label><br/>
         <label>Background in this Subject:<br/>
-        <textarea id="subjectBackgroundInput" placeholder="SUBJECT BACKGROUND"></textarea>
+        <textarea id="subjectBackgroundInput" placeholder="SUBJECT BACKGROUND">None at all! I have never worked with HTML or CSS before, but I am enjoying learning it!</textarea>
         </label><br/>
         <label>Primary Computer Platform:<br/>
-        <textarea id="platformInput" placeholder="PRIMARY COMPUTER"></textarea>
+        <textarea id="platformInput" placeholder="PRIMARY COMPUTER">My main computer is a Thinkpad X1 running Arch Linux.</textarea>
         </label><br/>
         <label>Backup Work Computer & Location Plan:<br/>
-        <textarea id="backupComputerInput" placeholder="BACKUP COMPUTER"></textarea>
+        <textarea id="backupComputerInput" placeholder="BACKUP COMPUTER">When I have compatibility issues with linux, my backup is a laptop running Windows 11(though Windows 10 is much better in my opinion).</textarea>
         </label><br/>
         <label>Where I'm From:<br/>
-        <textarea id="fromInput" placeholder="I AM FROM..."></textarea>
+        <textarea id="fromInput" placeholder="I AM FROM...">I have lived in NC for my entire life, though I had not spent much time in the Charlotte area prior to being admitted to UNC Charlotte. Over the summer, I am taking only online classes, but during Spring and Fall semesters I commute to campus. So far, I have enjoyed campus and the surrounding area. There are so many interesting things to see and do!</textarea>
         </label><br/><br/>
 
         <h3>Classes</h3>
         <div id="classList">
         <div class="classItem">
-            <input type="text" class="className" placeholder="CLASS NAME" />
-            <input type="text" class="classNumber" placeholder="CLASS CODE(ITIS3135)" />
-            <input type="text" class="classReason" placeholder="REASON FOR TAKING" />
+            <input type="text" class="className" placeholder="CLASS NAME" value="Front-End Web Application Development" />
+            <input type="text" class="classNumber" placeholder="CLASS CODE(ITIS3135)" value="ITIS3135" />
+            <input type="text" class="classReason" placeholder="REASON FOR TAKING" value="This course! I am taking this class both because it is required and because I am interested in web development." />
+            <button type="button" class="deleteClassBtn">Delete</button>
+        </div>
+        <div class="classItem">
+            <input type="text" class="className" placeholder="CLASS NAME" value="Software Engineering" />
+            <input type="text" class="classNumber" placeholder="CLASS CODE(ITIS3135)" value="ITSC3155" />
+            <input type="text" class="classReason" placeholder="REASON FOR TAKING" value="Required for my degree, this course focuses on development, design, and the overall process of engineering software." />
+            <button type="button" class="deleteClassBtn">Delete</button>
+        </div>
+        <div class="classItem">
+            <input type="text" class="className" placeholder="CLASS NAME" value="Intro to Prob &amp; Stat" />
+            <input type="text" class="classNumber" placeholder="CLASS CODE(ITIS3135)" value="STAT2122" />
+            <input type="text" class="classReason" placeholder="REASON FOR TAKING" value="Required math for my degree, I am taking it as a 4 week course. If anyone reading this is considering STAT 2122 as a 4 week course, I implore you to consider the more reasonable 8 week option." />
             <button type="button" class="deleteClassBtn">Delete</button>
         </div>
         </div>
@@ -87,18 +110,18 @@
         <br /><br />
         <h3>Acknowledgment</h3>
         <label>Acknowledgment Statement:<br/>
-        <textarea id="ackStatementInput" placeholder="LEAVE BLANK FOR DEFAULT STATEMENT"></textarea>
+        <textarea id="ackStatementInput" placeholder="LEAVE BLANK FOR DEFAULT STATEMENT">I agree that everything I post here is publicly viewable and won't put anything I don't want public here. </textarea>
         </label><br/>
         <label>Acknowledgment Date:
-        <input type="text" id="ackDateInput" placeholder="YY/MM/DD"/>
+        <input type="text" id="ackDateInput" placeholder="YY/MM/DD" value="2026/05/20"/>
         </label><br/><br/>
 
         <h3>Quote</h3>
         <label>Quote:<br/>
-        <textarea id="quoteInput" placeholder="QUOTE"></textarea>
+        <textarea id="quoteInput" placeholder="QUOTE">I have two Microsoft Outlooks, and neither one of those are working.</textarea>
         </label><br/>
         <label>Quote Author:
-        <input type="text" id="quoteAuthorInput" placeholder="AUTHOR" />
+        <input type="text" id="quoteAuthorInput" placeholder="AUTHOR" value="Artemis II Astronaut" />
         </label><br/><br/>
 
         <h3>Optional Extras</h3>
@@ -111,35 +134,40 @@
 
         <h3>Links</h3>
         <label>LinkedIn:
-        <input type="url" id="linkedinInput" placeholder="https://linkedin.com/in/username" />
+        <input type="url" id="linkedinInput" placeholder="https://linkedin.com/in/username" value="https://www.linkedin.com/in/taylor-stewart-0992003ab/" />
         </label><br/>
         <label>GitHub:
-        <input type="url" id="githubInput" placeholder="https://github.com/username" />
+        <input type="url" id="githubInput" placeholder="https://github.com/username" value="https://github.com/Brainrot0570" />
         </label><br/>
         <label>CLT Web (GitHub.io root):
-        <input type="url" id="githubioInput" placeholder="https://username.github.io" />
+        <input type="url" id="githubioInput" placeholder="https://username.github.io" value="https://brainrot0570.github.io/" />
         </label><br/>
         <label>GitHub.io (course site):
-        <input type="url" id="courseSiteInput" placeholder="https://username.github.io/itis3135/" />
+        <input type="url" id="courseSiteInput" placeholder="https://username.github.io/itis3135/" value="https://webpages.charlotte.edu/tstewa60/" />
         </label><br/>
         <label>freeCodeCamp:
-        <input type="url" id="freecodeInput" placeholder="https://freecodecamp.org/username" />
+        <input type="url" id="freecodeInput" placeholder="https://freecodecamp.org/username" value="https://www.freecodecamp.org/tstewa60" />
         </label><br/>
         <label>Codecademy:
-        <input type="url" id="codecademyInput" placeholder="https://codecademy.com/profiles/username" />
+        <input type="url" id="codecademyInput" placeholder="https://codecademy.com/profiles/username" value="https://www.codecademy.com/profiles/dev8070233007" />
         </label><br/><br/>
 
         <button type="submit">Submit</button>
         <button type="button" id="clearBtn">Clear</button>
+        <br/><br/>
+        <button type="button" id="generateHtmlBtn">Generate HTML</button>
+        <button type="button" id="generateJsonBtn">Generate JSON</button>
+        <button type="button" id="generateXmlBtn">Generate XML</button>
     </form>
     </div>
 </main>
 
     <div id="output"></div>
+    <div id="generatedOutputs"></div>
     <button type="button" id="resetBtn" style="display:none;">Reset</button>
       <div id="siteFooter" data-include="./components/footer.html"></div>
 
-    <script src="./scripts/intro-script.js"></script>
+    <script src="./scripts/introduction.js"></script>
     <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script>
     
     </body>
