@@ -18,7 +18,7 @@
         <h2>Home</h2>
         <p>We knit our sweaters with soft, supple wool and cotton. All of our materials are organic and cat-friendly, to keep your furry friends safe and warm. Here's a preview, but you can visit our shop to see the full line of sweaters. </p>
         
-        <div class="card-grid" id="cards">
+        <div class="card-grid" id="slide-cards">
     <figure>
         <img src="images/rocky_tabby.png" alt="Tabby cat wearing a teal sweater">
       <figcaption>
@@ -58,11 +58,11 @@
 <!-- Slideshow JavaScript -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const cardContainer = document.getElementById("cards");
+    const cardContainer = document.getElementById("slide-cards");
     if (!cardContainer) return;
 
     const slides = cardContainer.querySelectorAll("figure");
-    if (slides.length <= 1) return; // No slideshow needed for 1 or 0 items
+    if (slides.length <= 1) return; 
 
     let currentSlideIndex = 0;
 

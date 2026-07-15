@@ -295,7 +295,7 @@ a:focus-visible {
 
 /* Slideshow */
   /* Ensure the container is positioned relatively for button alignment */
-  #cards {
+  #slide-cards {
     position: relative;
     max-width: 440px; /* Snug width to fit a single card nicely */
     margin: 0 auto;
@@ -307,14 +307,14 @@ a:focus-visible {
   }
   
   /* Slide transition styling */
-  #cards figure {
+  #slide-cards figure {
     display: none; /* Hidden by default */
     width: 100%;
     margin: 0;
     animation: fadeEffect 0.5s;
   }
   
-  #cards .active-slide {
+  #slide-cards .active-slide {
     display: block; /* Show only the active slide */
   }
 
@@ -359,6 +359,7 @@ a:focus-visible {
         display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      margin: auto;
       gap: 20px;
     }
 
@@ -372,8 +373,10 @@ a:focus-visible {
        width: 500px;
 
     }
-
-
+ 
+    .center{
+        margin: 20px auto;
+    }
 
    /* Figures (product images / cat photos) */
 
