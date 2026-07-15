@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tough Serval Sweaters | Home</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="stylesheet" href="styles/default.css">
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div data-include="./components/header.html"></div>
+
+<main>
+    <hr class="container">
+    
+    <section class="container">
+        <h2>Home</h2>
+        <p>We knit our sweaters with soft, supple wool and cotton. All of our materials are organic and cat-friendly, to keep your furry friends safe and warm. Here's a preview, but you can visit our shop to see the full line of sweaters. </p>
+        
+        <div class="card-grid" id="cards">
+    <figure>
+        <img src="images/rocky_tabby.png" alt="Tabby cat wearing a teal sweater">
+      <figcaption>
+          <span class="badge">New</span>
+        Teal Turtleneck
+        <span class="price">$28.00</span>
+    </figcaption>
+    </figure>
+
+    <figure>
+        <img src="images/sphinx2.png" alt="Cat wearing a rose-colored wrap sweater">
+      <figcaption>
+          Rosie Wrap Sweater
+        <span class="price">$32.00</span>
+      </figcaption>
+    </figure>
+  </div>
+  
+  <p><a href="product.html">See the full collection &rarr;</a></p>
+</section>
+
+<hr class="container">
+
+<section id="newsletter" class="container" style="max-width: 480px;">
+  <h2>Stay in the Loop</h2>
+  <p>Get first dibs on new sweater drops and the occasional photo of a cat refusing to wear one.</p>
+  <form>
+      <label for="email">Email address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com">
+    <button type="submit" class="btn btn-accent">Sign Me Up</button>
+</form>
+</section>
+</main>
+
+    <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script>
+
+<!-- Slideshow JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cardContainer = document.getElementById("cards");
+    if (!cardContainer) return;
+
+    const slides = cardContainer.querySelectorAll("figure");
+    if (slides.length <= 1) return; // No slideshow needed for 1 or 0 items
+
+    let currentSlideIndex = 0;
+
+    // Create Navigation Buttons
+    const prevBtn = document.createElement("button");
+    prevBtn.innerHTML = "&#10094;"; // Left Arrow Symbol
+    prevBtn.className = "slide-btn prev-btn";
+    prevBtn.setAttribute("aria-label", "Previous product");
+
+    const nextBtn = document.createElement("button");
+    nextBtn.innerHTML = "&#10095;"; // Right Arrow Symbol
+    nextBtn.className = "slide-btn next-btn";
+    nextBtn.setAttribute("aria-label", "Next product");
+
+    // Append buttons to the container
+    cardContainer.appendChild(prevBtn);
+    cardContainer.appendChild(nextBtn);
+
+    // Render Function
+    function showSlide(index) {
+      slides.forEach((slide, idx) => {
+        if (idx === index) {
+          slide.classList.add("active-slide");
+        } else {
+          slide.classList.remove("active-slide");
+        }
+      });
+    }
+
+    // Event Listeners
+    prevBtn.addEventListener("click", () => {
+      currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+      showSlide(currentSlideIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+      showSlide(currentSlideIndex);
+    });
+
+    // Initialize the first slide
+    showSlide(currentSlideIndex);
+  });
+</script>
+<div data-include="./components/footer.html"></div>
+<script src="./scripts/HTMLInclude.min.js"></script>
+
+</body>
+</html>

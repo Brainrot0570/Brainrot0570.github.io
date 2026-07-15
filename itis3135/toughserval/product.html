@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tough Serval Sweaters | Products</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="stylesheet" href="styles/default.css">
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div data-include="./components/header.html"></div>
+
+<main>
+
+    <section class="container">
+        <h2>Products</h2>
+        <p>We assure you that our sweaters are comfortable, warm, and tougher than even the most adventurous outdoor cats. Every product we sell is backed up by a lifetime warranty. </p>
+        <p>Explore our line of hand-knitted sweaters for adventurous kittens and cats!</p>
+  <div class="product-card-grid" id="cards">
+      <figure>
+      <img height="300" src="images/rocky_tabby.png" alt="Tabby cat wearing a teal sweater">
+      <figcaption>
+        <span class="badge">New</span>
+        Teal Turtleneck
+        <span class="price">$28.00</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img height="300" src="images/sphinx2.png" alt="Cat wearing a rose-colored wrap sweater">
+      <figcaption>
+          Rosie Wrap Sweater
+        <span class="price">$32.00</span>
+    </figcaption>
+</figure>
+
+<figure>
+    <img height="300" src="images/yellow.png" alt="Cat wearing a mustard yellow vest">
+      <figcaption>
+          <span class="badge badge-rose">Sold Out</span>
+        Mustard Knit Vest
+        <span class="price">$24.00</span>
+      </figcaption>
+    </figure>
+    
+    <figure>
+        <img height="300" src="images/cozy_plumb.png" alt="Cat wearing a plum poncho">
+        <figcaption>
+            Plum Poncho
+        <span class="price">$35.00</span>
+    </figcaption>
+    </figure>
+</div>
+</section>
+</main>
+<section class="container" id="quiz">
+  <h2>Sizing</h2>
+  <p>Use this sizing quiz to find the purrfect size for your furry friend.</p>
+
+  <form id="size-calculator" >
+    <label for="cat-weight">How heavy is your cat?</label>
+    <select id="cat-weight" required >
+      <option value="">-- Choose Weight --</option>
+      <option value="small">Teacup / Kitten (Under 7 lbs)</option>
+      <option value="medium">Medium Cat (7 - 12 lbs)</option>
+      <option value="large">Large / Fluffy (Over 12 lbs)</option>
+    </select>
+
+    <label for="cat-attitude">How active is your cat?</label>
+    <select id="cat-attitude" required >
+      <option value="">-- Choose Activity Level --</option>
+      <option value="indoor">Indoor Cat - Relaxed and Loves to Nap</option>
+      <option value="outdoor">Outdoor Cat - Extra Stretch for Outdoor Fun</option>
+    </select>
+
+    <button type="button" id="calc-btn" class="btn">Calculate Fit</button>
+    
+    <div id="quiz-result" ></div>
+  </form>
+</section>
+
+<!-- Sizing Quiz Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const calcBtn = document.getElementById("calc-btn");
+    const weightSelect = document.getElementById("cat-weight");
+    const attitudeSelect = document.getElementById("cat-attitude");
+    const resultDiv = document.getElementById("quiz-result");
+
+    if (!calcBtn || !resultDiv) return;
+
+    calcBtn.addEventListener("click", () => {
+      const weight = weightSelect.value;
+      const attitude = attitudeSelect.value;
+
+      if (!weight || !attitude) {
+        resultDiv.style.display = "block";
+        resultDiv.style.backgroundColor = "var(--rose-light)";
+        resultDiv.style.color = "var(--plum-dark)";
+        resultDiv.innerHTML = "<strong>Please select both criteria!</strong>";
+        return;
+      }
+
+      let recommendation = "";
+      
+      // small custom logic tree based on parameters
+      if (weight === "small") {
+        recommendation = attitude === "indoor" ? "<strong>Size XS (Kitten snug)</strong>" : "<strong>Size S (For kitten acrobats)</strong>";
+      } else if (weight === "medium") {
+        recommendation = attitude === "indoor" ? "<strong>Size M (Standard cozy)</strong>" : "<strong>Size L (Give them space to zoom!)</strong>";
+      } else {
+        recommendation = attitude === "indoor" ? "<strong>Size L (Max chunky comfort)</strong>" : "<strong>Size XL (Stretchy room for huge leaps)</strong>";
+      }
+
+      // Display results cleanly 
+      resultDiv.style.display = "block";
+      resultDiv.style.backgroundColor = "var(--teal-light)";
+      resultDiv.style.color = "var(--teal-dark)";
+      resultDiv.innerHTML = ` We recommend: ${recommendation}! Every order has free hassle-free size swaps just in case.`;
+    });
+  });
+</script>
+<div data-include="./components/footer.html"></div>
+<script src="./scripts/HTMLInclude.min.js"></script>
+
+    <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script>
+</body>
+</html>

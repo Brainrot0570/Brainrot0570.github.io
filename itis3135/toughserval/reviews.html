@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tough Serval Sweaters | Reviews</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="stylesheet" href="styles/default.css">
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div data-include="./components/header.html"></div>
+
+<main>
+
+    <section class="container">
+        <h2>Reviews</h2>
+        <div class="card-grid" >
+    <div class="card">
+        <p><q>My cat wore it for four minutes and then judged me for the rest of the day. Ten out of ten.</q></p>
+      <small>- Priya, owner of Mochi</small>
+    </div>
+    <div class="card">
+      <p><q>Finally, a sweater that survives a full zoomie session without unraveling.</q></p>
+      <small>- Shawn, owner of Biscuit</small>
+    </div>
+    <div class="card">
+        <p><q>The mustard vest matches her eyes. I was not prepared for how good she'd look.</q></p>
+      <small>- Ana, owner of Clementine</small>
+    </div>
+    <div class="card">
+      <p><q>Shipping was fast and the packaging alone earned a sniff of approval.</q></p>
+      <small>- Marcus, owner of Waffles</small>
+    </div>
+  </div>
+</section>
+</main>
+<section class="container review-box" >
+  <h2>Write a Review</h2>
+  <p>How did your cat feel about their sweater?</p>
+  
+  <form id="review-form" >
+    <label for="new-review-text">Your Review</label>
+    <textarea id="new-review-text" rows="3" placeholder="My cat loved wearing his new Tough Serval Sweater..." required ></textarea>
+
+    <div id="info">
+      <div>
+        <label for="reviewer-name">Your Name</label>
+        <input type="text" id="reviewer-name" placeholder="John" required >
+      </div>
+      <div>
+        <label for="cat-name">Cat's Name</label>
+        <input type="text" id="cat-name" placeholder="Garfield" required >
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-accent">Post Review</button>
+  </form>
+</section>
+
+<!-- Review Generator Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const reviewForm = document.getElementById("review-form");
+    const reviewGrid = document.querySelector(".card-grid");
+
+    if (!reviewForm || !reviewGrid) return;
+
+    reviewForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Retrieve form values
+      const text = document.getElementById("new-review-text").value.trim();
+      const reviewer = document.getElementById("reviewer-name").value.trim();
+      const cat = document.getElementById("cat-name").value.trim();
+
+      // Form validation
+      if (!text || !reviewer || !cat) return;
+
+      // Create new review element with layout matching original markup
+      const newCard = document.createElement("div");
+      newCard.className = "card";
+      newCard.style.animation = "fadeEffect 0.8s";
+      newCard.innerHTML = `
+        <p><q>${text}</q></p>
+        <small>- ${reviewer}, owner of ${cat}</small>
+      `;
+
+      // Insert the new review at the top of the review card list
+      reviewGrid.insertBefore(newCard, reviewGrid.firstChild);
+
+      // Reset form fields
+      reviewForm.reset();
+    });
+  });
+</script>
+<div data-include="./components/footer.html"></div>
+<script src="./scripts/HTMLInclude.min.js"></script>
+
+    <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script>
+    
+</body>
+</html>
