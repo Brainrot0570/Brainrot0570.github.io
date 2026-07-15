@@ -14,7 +14,7 @@
 
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: Courier, monospace;
   margin: 60px auto;
   padding: 0 20px;
   color: #ffffcc;
@@ -29,13 +29,13 @@ hr  {
 }
 
 nav {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: flex;
   gap: 6px;
   justify-content: center;
 }
 
 h1 {
-  font-family: Courier, monospace;
   font-size: 3rem;
   margin-bottom: 12px;
   text-align: center;
